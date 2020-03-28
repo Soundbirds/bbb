@@ -6,7 +6,7 @@ By state:
 - Switch the x-variable to 'Time' after loading into the web browser is completed (googleVis hangs if xvar starts with the timevar).
 - Make an initial run without selecting any states.
 - Single left mouse click on a circle to select (or unselect) a state, or select the states manually from the list.
-- After selection is complete, rerun
+- After selection is complete, rerun.  The playback speed can be adjusted using the dial immediately to the right of the play button. 
 
 
       library(googleVis)
@@ -28,7 +28,7 @@ Counties within a state:
  - Switch the x-variable to 'Time' after loading into the web browser is completed (googleVis hangs if xvar starts with the timevar).
 - Make an initial run without selecting any counties.
 - Single left mouse click on a circle to select (or unselect) a county, or select the counties manually from the list.
-- After selection is complete, rerun
+- After selection is complete, rerun. The playback speed can be adjusted using the dial immediately to the right of the play button.
     
      
       usCounties <- read.csv(textConnection(getURL("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv")))
