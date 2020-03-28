@@ -19,5 +19,10 @@
                  xvar = 'deaths',  yvar = 'cases', sizevar = 'cases', colorvar = 'deaths', options=list(width = 1024, height = 768)))
                  
   
+     Published here (data as of 27 Mar 2020):
+     
+     https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/
+     
+       
      
      
