@@ -39,9 +39,9 @@ Counties within a state:
                  xvar = 'deaths',  yvar = 'cases', sizevar = 'cases', colorvar = 'deaths', options=list(width = 1024, height = 768)))
                  
   
-     Published here (data as of 27 Mar 2020):
+     Published here (data as of 27 Mar 2020; works with the Firefox browser):
      
-     https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/
+     https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/ 
      
      
  
