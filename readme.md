@@ -1,5 +1,5 @@
 
-Data visualization via R code using the googleVis package ( https://github.com/mages/googleVis )
+Data visualization of the NY Times COVID-19 data (https://github.com/nytimes/covid-19-data) via R code using the googleVis package (https://github.com/mages/googleVis).
    
 By state:
     
@@ -13,6 +13,7 @@ By state:
       library(RCurl)
 
       # usStates <- JRWToolBox::gitAFile("nytimes/covid-19-data/master/us-states.csv", 'csv', verbose = TRUE) # Code below from my JRWToolBox::gitAFile() function
+      # Note the need to use 'https://raw.githubusercontent.com' without 'blob', but with 'master' in the URL. This has to exactly correct, otherwise the reuslt is html code or something broken.
       usStates <- read.csv(textConnection(getURL("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv")))
       usStates$date <- as.Date(usStates$date)
 
