@@ -3,6 +3,7 @@ R code using googleVis package
 
 
      library(googleVis)
+     library(RCurl)
 
      # usCounties <- JRWToolBox::gitAFile("nytimes/covid-19-data/master/us-counties.csv", 'csv', verbose = TRUE) # Code from my gitAFile()
      usCounties <-  read.csv(textConnection(getURL("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv")))
@@ -11,7 +12,7 @@ R code using googleVis package
 
 - Switch the x-variable to 'Time' after loading into the web browser is completed
 - Make an intial run without selecting any counties.
-- Single left mouse click on a circle to select (or unselect) a county, or select the counties manaully from the list.
+- Single left mouse click on a circle to select (or unselect) a county (state), or select the counties (states) manually from the list.
 - After selection is complete, rerun
 
 
