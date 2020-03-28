@@ -6,7 +6,7 @@
 
      usCounties <- gitAFile("nytimes/covid-19-data/master/us-counties.csv", 'csv')
      usCounties$date <- as.Date(usCounties$date)
-     States <- c('Washington', 'New York')[2]
+     States <- c('Washington', 'New York')[1]
 
 - Switch the x-variable to 'Time' after loading into the web browser is completed
 - Make an intial run without selecting any counties.
