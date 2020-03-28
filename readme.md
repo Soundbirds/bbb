@@ -50,5 +50,13 @@ The browser needs to allow the Adobe Flash player to run, Firefox makes this an 
 For Chrome see:
     
     https://support.google.com/chrome/answer/6258784?co=GENIE.Platform%3DDesktop&hl=en
+    
+    
+Hans Rosling uses the precursor of googleVis in an amazing Ted talk:
+    
+    https://www.youtube.com/watch?v=RUwS1uAdUcI
+    
+    
+    
      
      
