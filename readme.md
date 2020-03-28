@@ -4,7 +4,7 @@ Data visualization via R code using the googleVis package
 By state:
     
 - Switch the x-variable to 'Time' after loading into the web browser is completed
-- Make an intial run without selecting any states.
+- Make an initial run without selecting any states.
 - Single left mouse click on a circle to select (or unselect) a state, or select the states manually from the list.
 - After selection is complete, rerun
 
@@ -23,7 +23,7 @@ By state:
 Counties within a state:
 
  - Switch the x-variable to 'Time' after loading into the web browser is completed
-- Make an intial run without selecting any counties.
+- Make an initial run without selecting any counties.
 - Single left mouse click on a circle to select (or unselect) a county, or select the counties manually from the list.
 - After selection is complete, rerun
     
