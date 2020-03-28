@@ -3,7 +3,7 @@ Data visualization of the NY Times COVID-19 data (https://github.com/nytimes/cov
    
 By state:
     
-- Switch the x-variable to 'Time' after loading into the web browser is completed
+- Switch the x-variable to 'Time' after loading into the web browser is completed.
 - Make an initial run without selecting any states.
 - Single left mouse click on a circle to select (or unselect) a state, or select the states manually from the list.
 - After selection is complete, rerun
@@ -24,7 +24,7 @@ By state:
 
 Counties within a state:
 
- - Switch the x-variable to 'Time' after loading into the web browser is completed
+ - Switch the x-variable to 'Time' after loading into the web browser is completed.
 - Make an initial run without selecting any counties.
 - Single left mouse click on a circle to select (or unselect) a county, or select the counties manually from the list.
 - After selection is complete, rerun
