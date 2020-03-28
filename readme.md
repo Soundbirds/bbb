@@ -11,7 +11,7 @@ R code using googleVis package
      
 
 - Switch the x-variable to 'Time' after loading into the web browser is completed
-- Make an intial run without selecting any counties.
+- Make an intial run without selecting any counties (states).
 - Single left mouse click on a circle to select (or unselect) a county (state), or select the counties (states) manually from the list.
 - After selection is complete, rerun
 
