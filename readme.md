@@ -52,7 +52,7 @@ For Chrome see:
     https://support.google.com/chrome/answer/6258784?co=GENIE.Platform%3DDesktop&hl=en
     
     
-Hans Rosling uses the precursor of googleVis in an amazing Ted talk:
+Hans Rosling uses the precursor of googleVis in an amazing Ted talk from 2007:
     
     https://www.youtube.com/watch?v=RUwS1uAdUcI
     
