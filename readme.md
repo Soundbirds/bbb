@@ -4,7 +4,8 @@
 
      library(googleVis)
 
-     usCounties <- gitAFile("nytimes/covid-19-data/master/us-counties.csv", 'csv')
+     # usCounties <- JRWToolBox::gitAFile("nytimes/covid-19-data/master/us-counties.csv", 'csv', verbose = TRUE) # Code from my gitAFile()
+     usCounties <-  read.csv(textConnection(getURL("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv")))
      usCounties$date <- as.Date(usCounties$date)
      States <- c('Washington', 'New York')[1]
 
