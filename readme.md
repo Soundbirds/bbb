@@ -1,5 +1,14 @@
 
 Data visualization of the NY Times COVID-19 data (https://github.com/nytimes/covid-19-data) via R code using the googleVis package (https://github.com/mages/googleVis).
+
+Browser requirements:
+
+The browser needs to allow the Adobe Flash player to run, Firefox makes this an easy 2 clicks with clear prompting.
+    
+For Chrome see:
+    
+    https://support.google.com/chrome/answer/6258784?co=GENIE.Platform%3DDesktop&hl=en
+    
    
 By state:
     
@@ -56,12 +65,7 @@ The website for counties of New York state is published here (data as of 27 Mar 
      
      https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/ 
           
-The browser needs to allow the Adobe Flash player to run, Firefox makes this an easy 2 clicks with clear prompting.
-    
-For Chrome see:
-    
-    https://support.google.com/chrome/answer/6258784?co=GENIE.Platform%3DDesktop&hl=en
-    
+   
     
 P.S. Hans Rosling uses the precursor of googleVis in an amazing Ted talk from 2007:
     
