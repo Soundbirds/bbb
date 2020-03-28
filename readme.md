@@ -1,5 +1,5 @@
 
-R code using googleVis package
+Data visualization via R code using the googleVis package
    
 By state:
     
