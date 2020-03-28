@@ -22,6 +22,7 @@ By state:
            xvar = 'deaths',  yvar = 'cases', sizevar = 'cases', colorvar = 'deaths', options=list(width = 1024, height = 768)))
 
 
+
 Counties within a state:
 
  - Switch the x-variable to 'Time' after loading into the web browser is completed.
