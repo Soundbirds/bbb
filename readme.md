@@ -30,7 +30,9 @@ Counties within a state:
 - Single left mouse click on a circle to select (or unselect) a county, or select the counties manually from the list.
 - After selection is complete, rerun. The playback speed can be adjusted using the dial immediately to the right of the play button.
     
-     
+      library(googleVis)
+      library(RCurl)
+      
       usCounties <- read.csv(textConnection(getURL("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv")))
       usCounties$date <- as.Date(usCounties$date)
     
