@@ -1,16 +1,14 @@
 library(shiny)
 library(googleVis)
 shinyUI(fluidPage(
-  titlePanel("GoogleVis example"),
+  titlePanel("Data visualization of the NY Times COVID-19 data"),
   sidebarLayout(
        sidebarPanel(
-         h4("GoogleVis and Shiny")
+         h4("Data visualization of the NY Times COVID-19 data")
          
        ),
     mainPanel(
-      htmlOutput("bubble"),
-      htmlOutput("scatter"),
-      htmlOutput("guage")
+      htmlOutput("motion")
     )
   ))
 )

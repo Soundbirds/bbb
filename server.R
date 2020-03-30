@@ -1,43 +1,19 @@
 library(shiny)
 library(googleVis)
+library(RCurl)
 shinyServer(function(input, output, session){
   
 
+    usStates <- read.csv(textConnection(getURL("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv")))
+    usStates$date <- as.Date(usStates$date)
+    usStates$newCases <- c(0, diff(usStates$cases))
+    usStates$newDeaths <- c(0, diff(usStates$deaths))
 
-
-  output$bubble <- renderGvis({
+  output$motion <- renderGvis({
     
-    gvisBubbleChart(Fruits, idvar="Fruit", 
-                    xvar="Sales", yvar="Expenses",
-                    colorvar="Year", sizevar="Profit",
-                    options=list(title = "An example of Bubble Chart",
-                      hAxis='{title: "Sales", minValue:75, maxValue:125}',
-                      vAxis='{title: "Expenses"}'
-                      )
-                     ) })
-  
-  output$scatter <- renderGvis({
-    
-    gvisScatterChart(women, 
-                     options=list(
-                      legend="none",
-                       lineWidth=0, pointSize=1,
-                       title="Example of Scatterplot using Women dataset", vAxis="{title:'weight (lbs)'}",
-                       hAxis="{title:'height (in)'}", 
-                       width=300, height=300))
-    
-    
+    plot(gvisMotionChart(usStates[usStates$date > "2020-02-24", ], idvar = 'state', timevar = 'date', 
+           xvar = 'deaths',  yvar = 'cases', sizevar = 'newCases', colorvar = 'newDeaths', options=list(width = 1024, height = 768)))
+           
   })
-  
-  output$guage <- renderGvis({
-    
-    gvisGauge(CityPopularity, 
-              options=list(title= 'Example of Guage', min=0, max=800, greenFrom=500,
-                           greenTo=800, yellowFrom=300, yellowTo=500,
-                           redFrom=0, redTo=300, width=400, height=300))
-    
-    
-  })
-  
   
 })
