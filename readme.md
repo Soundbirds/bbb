@@ -61,7 +61,7 @@ Counties within a state:
                         
                  
   
-The website for counties of New York state is published here (data as of 27 Mar 2020):
+The website for counties in 3 states is published here:
      
      https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/ 
           
