@@ -59,11 +59,13 @@ Counties within a state:
       plot(gvisMotionChart(usCounties[usCounties$state %in% States & usCounties$date > "2020-02-24", ], idvar = 'countyState', timevar = 'date', 
                  xvar = 'deaths',  yvar = 'cases', sizevar = 'newCases', colorvar = 'newDeaths', options=list(width = 1024, height = 768)))
                         
-                 
+The website the US states is published here:
+
+    https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/COVID_states.htm
   
 The website for counties in 3 states is published here:
      
-     https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/ 
+     https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/COVID_counties.htm
           
    
     
