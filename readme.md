@@ -3,7 +3,7 @@ Data visualization of the NY Times COVID-19 data (https://github.com/nytimes/cov
 
 Browser requirements:
 
-The browser needs to allow the Adobe Flash player to run, Firefox makes this an easy 2 clicks with clear prompting.
+The browser needs to allow the Adobe Flash player to run, Firefox and Opera both make this an easy 2 clicks with clear prompting.
     
 For Chrome see:
     
@@ -55,15 +55,15 @@ Counties within a state:
                  xvar = 'deaths',  yvar = 'cases', sizevar = 'newCases', colorvar = 'newDeaths', options=list(width = 1024, height = 768)))
        
       # Counties inside 3 states 
-      States <- c('Washington', 'New York', 'California')
+      States <- c('Washington', 'New York', 'California')  # Switch states as desired - too many states is slow
       plot(gvisMotionChart(usCounties[usCounties$state %in% States & usCounties$date > "2020-02-24", ], idvar = 'countyState', timevar = 'date', 
                  xvar = 'deaths',  yvar = 'cases', sizevar = 'newCases', colorvar = 'newDeaths', options=list(width = 1024, height = 768)))
                         
-The website the US states is published here:
+The website for all 50 states is published here:
 
     https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/COVID_states.htm
   
-The website for counties in 3 states is published here:
+The website for counties within 3 states is published here:
      
      https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/COVID_counties.htm
           
