@@ -74,7 +74,7 @@ P.S. Hans Rosling uses the precursor of googleVis in an amazing Ted talk from 20
     https://www.youtube.com/watch?v=RUwS1uAdUcI
     
 
-    "In 2006 Hans Rosling gave an inspiring talk at
+"In 2006 Hans Rosling gave an inspiring talk at
 TED~\cite{HansRoslingTedTalk} about social and economic developments
 in the world over the past 50 years, which challenged the views and
 perceptions of many listeners. Rosling had used extensive data analysis
