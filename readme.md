@@ -88,7 +88,7 @@ Gapminder was bought by Google and integrated as motion charts into
 their Google Charts API, formerly known as Google
 Visualisation API."
 
-   https://github.com/mages/googleVis/blob/master/vignettes/googleVis.Rnw
+    https://github.com/mages/googleVis/blob/master/vignettes/googleVis.Rnw
     
     
     
