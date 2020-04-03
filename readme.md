@@ -75,17 +75,17 @@ P.S. Hans Rosling uses the precursor of googleVis in an amazing Ted talk from 20
     
 
 "In 2006 Hans Rosling gave an inspiring talk at
-TED~\cite{HansRoslingTedTalk} about social and economic developments
+TED about social and economic developments
 in the world over the past 50 years, which challenged the views and
 perceptions of many listeners. Rosling had used extensive data analysis
 to reach his conclusions.  To visualise his talk, he and his team at
-Gapminder~\cite{Gapminder} had developed animated bubble charts, aka
-motion charts, see Figure~\ref{MotionChartGUI}. 
+Gapminder had developed animated bubble charts, aka
+motion charts, see Figure. 
 
 Rosling's presentation popularised the idea and use of interactive
 charts. One year later the software behind
 Gapminder was bought by Google and integrated as motion charts into
-their Google Charts API~\cite{GoogleVisApi}, formerly known as Google
+their Google Charts API, formerly known as Google
 Visualisation API."
 
      https://github.com/mages/googleVis/blob/master/vignettes/googleVis.Rnw
