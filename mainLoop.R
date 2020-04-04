@@ -17,6 +17,8 @@ while(TRUE) {
     source('updateGvisFigs.R') 
     
     shell("start Push.bat")
+    
+    print(timestamp())
            
     Sys.sleep(6*3600)
 }   
