@@ -13,7 +13,7 @@
       
       caseDoubleByState <- NULL
       for ( i in unique(usStates$state))  {
-        print(i)
+        # print(i)
         stateData <- usStates[usStates$state %in% i, ]
         # Checked 'Rule of 70' but just the inverse (i.e. 100 instead of 70) appears more accuate for this data
         # caseDoubleByState <- rbind(caseDoubleByState, data.frame(date = stateData$date, state = stateData$state, casesStateDoublingRate = c(0, 70/(100 * diff(log(stateData$cases, 2))))))
