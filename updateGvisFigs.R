@@ -9,7 +9,7 @@
       usStates$newCases <- c(0, diff(usStates$cases))
       usStates$newDeaths <- c(0, diff(usStates$deaths))
       usStates$deathsPer1000Cases <- 1000 * usStates$deaths/usStates$cases
-      cat("\n"); print(usStates$date[nrow(usStates)])
+      cat("\n"); print(usStates$date[nrow(usStates)]); cat("\n")
       
       caseDoubleByState <- NULL
       for ( i in unique(usStates$state))  {
