@@ -21,7 +21,7 @@ while(TRUE) {
     setwd("C:/Users/John/")
     system(paste0("rm -r ", "NY.Times.COVID19.googleVis.github.io"))
     
-    print(timestamp())
+    timestamp()
            
     Sys.sleep(6*3600)
 }   
