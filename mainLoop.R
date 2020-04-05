@@ -9,7 +9,7 @@ while(TRUE) {
     shell("echo git clone https://github.com/Soundbirds/NY.Times.COVID19.googleVis.github.io.git  >> run.bat")
     shell("echo exit >> run.bat")
     shell("start run.bat")
-    Sys.sleep(3)
+    Sys.sleep(15)
     shell("del run.bat")
     Sys.sleep(3)
     
@@ -19,9 +19,13 @@ while(TRUE) {
     Sys.sleep(15)
     setwd("C:/Users/John/")
     system(paste0("rm -r ", "NY.Times.COVID19.googleVis.github.io"))
-    
     timestamp()
-           
-    Sys.sleep(6*3600)
+   
+    hoursPause <- 3  # Hours to pause; gives the time that has elapsed every 30 minutes
+    for(i in 1:(hoursPause * 2)) {
+       Sys.sleep(30 * 60); cat("\n\n", round((i * 5)/60, 3), "hours out of", Hours, "hours have passed\n"); timestamp()
+    }
 }   
+
+
 
