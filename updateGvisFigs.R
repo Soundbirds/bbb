@@ -34,7 +34,7 @@
       usCounties$newCases <- c(0, diff(usCounties$cases))
       usCounties$newDeaths <- c(0, diff(usCounties$deaths))
       usCounties$countyState <- paste(usCounties$county, usCounties$state, sep="_")
-      cat("\n"); print(usCounties$date[nrow(usCounties)])
+      cat("\n"); print(usCounties$date[nrow(usCounties)]); cat("\n")
  
       # State <- c('Washington', 'New York', 'California')[1]
       # plot(gvisMotionChart(usCounties[usCounties$state %in% State & usCounties$date > "2020-02-24", ], idvar = 'county', timevar = 'date', 
