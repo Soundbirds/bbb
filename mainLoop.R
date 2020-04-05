@@ -14,8 +14,7 @@ while(TRUE) {
     Sys.sleep(3)
     
     setwd("C:/Users/John/NY.Times.COVID19.googleVis.github.io")
-    source('updateGvisFigs.R') 
-    Sys.sleep(3)
+    source('updateGvisFigs.R')
     shell("start Push.bat")
     Sys.sleep(15)
     setwd("C:/Users/John/")
