@@ -17,7 +17,7 @@ while(TRUE) {
     source('updateGvisFigs.R') 
     Sys.sleep(3)
     shell("start Push.bat")
-    Sys.sleep(3)
+    Sys.sleep(15)
     setwd("C:/Users/John/")
     system(paste0("rm -r ", "NY.Times.COVID19.googleVis.github.io"))
     
