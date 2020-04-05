@@ -22,7 +22,7 @@ while(TRUE) {
     
     timestamp()
    
-    hoursPause <- 3  # Gives the time that has past every 30 minutes
+    hoursPause <- 3  # Hours to pause; gives the time that has elapsed every 30 minutes
     cat("\n\nStarting to pause for", hoursPause, "hours\n")
     for(i in 1:(hoursPause * 2)) {
        Sys.sleep(30 * 60)
