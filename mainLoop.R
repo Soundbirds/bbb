@@ -21,7 +21,7 @@ while(TRUE) {
     system(paste0("rm -r ", "NY.Times.COVID19.googleVis.github.io"))
     timestamp()
    
-    hoursPause <- 3  # Hours to pause; gives the time that has elapsed every 30 minutes
+    hoursPause <- 3  # Hours to pause; gives the time that has elapsed every ~30 minutes
     for(i in 1:(hoursPause * 2)) {
        Sys.sleep(30 * 60); cat("\n\n", round((i * 5)/60, 3), "hours out of", Hours, "hours have passed\n"); timestamp()
     }
