@@ -6,8 +6,7 @@ Browser requirements:
 The browser needs to allow the Adobe Flash player to run, Firefox and Opera both make this an easy 2 clicks with clear prompting.
     
 For Chrome see:
-  
-    https://support.google.com/chrome/answer/6258784?co=GENIE.Platform%3DDesktop&hl=en
+      https://support.google.com/chrome/answer/6258784?co=GENIE.Platform%3DDesktop&hl=en
     
    
 By state:
@@ -60,17 +59,13 @@ Counties within a state:
                  xvar = 'deaths',  yvar = 'cases', sizevar = 'newCases', colorvar = 'newDeaths', options=list(width = 1024, height = 768)))
                         
 The website for all 50 states is published here:
-
     https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/COVID_states.htm
   
-The website for counties within 3 states is published here:
-     
+The website for counties within 3 states is published here:     
      https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/COVID_counties.htm
           
-   
     
 P.S. Hans Rosling used the precursor of googleVis in an amazing Ted talk from 2006:
-    
     https://www.youtube.com/watch?v=RUwS1uAdUcI
     
 
@@ -87,7 +82,6 @@ charts. One year later the software behind
 Gapminder was bought by Google and integrated as motion charts into
 their Google Charts API, formerly known as Google
 Visualisation API."
-
     https://github.com/mages/googleVis/blob/master/vignettes/googleVis.Rnw
     
     
