@@ -36,7 +36,8 @@
 
       usCounties <- read.csv(textConnection(getURL("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv")))
       usCounties$date <- as.Date(usCounties$date)
-      usCounties$deathsPer1000Cases <- 1000 * usCounties$deaths/usCounties$cases
+      if(usCounties$deaths > usCounties$cases) usCounties$cases <- usCounties$cases + usCounties$deaths 
+      # usCounties$deathsPer1000Cases <- 1000 * usCounties$deaths/usCounties$cases  # Not enough cases within some counties
       usCounties$countyState <- paste(usCounties$county, usCounties$state, sep="_")
       cat("\nCounties' data latest date:", format(usCounties$date[nrow(usCounties)]), "\n\n")
       
