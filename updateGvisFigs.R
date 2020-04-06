@@ -6,19 +6,24 @@
       
       usStates <- read.csv(textConnection(getURL("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv")))
       usStates$date <- as.Date(usStates$date)
-      usStates$newCases <- c(0, diff(usStates$cases))
-      usStates$newDeaths <- c(0, diff(usStates$deaths))
       usStates$deathsPer1000Cases <- 1000 * usStates$deaths/usStates$cases
       cat("\nStates' data latest date:", format(usStates$date[nrow(usStates)]), "\n")
       
+      casesNewByState <- NULL
+      deathsNewByState <- NULL
       caseDoubleByState <- NULL
       for ( i in unique(usStates$state))  {
         # print(i)
         stateData <- usStates[usStates$state %in% i, ]
+        casesNewByState <- rbind(casesNewByState, data.frame(date = stateData$date, state = stateData$state, newCases = c(0, diff(stateData$cases))))
+        deathsNewByState <- rbind(deathsNewByState, data.frame(date = stateData$date, state = stateData$state, newDeaths = c(0, diff(stateData$deaths))))
         # Checked 'Rule of 70' but just the inverse (i.e. 100 instead of 70) appears more accuate for this data
         # caseDoubleByState <- rbind(caseDoubleByState, data.frame(date = stateData$date, state = stateData$state, casesStateDoublingRate = c(0, 70/(100 * diff(log(stateData$cases, 2))))))
         caseDoubleByState <- rbind(caseDoubleByState, data.frame(date = stateData$date, state = stateData$state, casesStateDoublingRate = c(0, 1/diff(log(stateData$cases, 2)))))
       }
+      
+      usStates <-  match.f(usStates, casesNewByState, c('date', 'state'), c('date', 'state'), 'newCases')
+      usStates <-  match.f(usStates, deathsNewByState, c('date', 'state'), c('date', 'state'), 'newDeaths')
       usStates <-  match.f(usStates, caseDoubleByState, c('date', 'state'), c('date', 'state'), 'casesStateDoublingRate')
       usStates$casesStateDoublingRate[!is.finite(usStates$casesStateDoublingRate) | usStates$casesStateDoublingRate > 40] <- NA
      
