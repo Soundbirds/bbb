@@ -9,7 +9,7 @@ while(TRUE) {
     shell("echo git clone https://github.com/Soundbirds/NY.Times.COVID19.googleVis.github.io.git  >> run.bat")
     shell("echo exit >> run.bat")
     shell("start run.bat")
-    Sys.sleep(15)
+    Sys.sleep(15)   # Default is for shell() to wait until process is done, but these pauses appear to be needed
     shell("del run.bat")
     Sys.sleep(3)
     
