@@ -26,7 +26,7 @@ while(TRUE) {
     cat("\n\nStarting to pause for", hoursPause, "hours\n")
     for(i in 1:(hoursPause * 2)) {
        Sys.sleep(30 * 60)
-       cat("\n\n", round((i * 5)/60, 3), "hours out of", hoursPause, "hours have passed\n")
+       cat("\n\n", round((i * 30)/60, 3), "hours out of", hoursPause, "hours have passed\n")
        timestamp()
     }
 }   
