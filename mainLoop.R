@@ -9,13 +9,13 @@ while(TRUE) {
     shell("echo git clone https://github.com/Soundbirds/NY.Times.COVID19.googleVis.github.io.git  >> run.bat")
     shell("echo exit >> run.bat")
     shell("start run.bat")
-    Sys.sleep(15)   # Default is for shell() to wait until process is done, but these pauses appear to be needed
+    Sys.sleep(15)   # Default is for shell() to wait until the process is done, but spawning git requires the pauses.
     shell("del run.bat")
     Sys.sleep(3)
     
     setwd("C:/Users/John/NY.Times.COVID19.googleVis.github.io")
     source('updateGvisFigs.R')
-    shell("start Push.bat")
+    shell("start Push.bat") # Git will prompt to login into GithHub if you have not already (just username and password, no token needed).
     Sys.sleep(15)
     setwd("C:/Users/John/")
     system(paste0("rm -r ", "NY.Times.COVID19.googleVis.github.io"))
