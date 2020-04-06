@@ -13,7 +13,7 @@
       deathsNewByState <- NULL
       caseDoubleByState <- NULL
       for ( i in unique(usStates$state))  {
-        print(i)
+        # print(i)
         stateData <- usStates[usStates$state %in% i, ]
         casesNewByState <- rbind(casesNewByState, data.frame(date = stateData$date, state = stateData$state, newCases = c(0, diff(stateData$cases))))
         deathsNewByState <- rbind(deathsNewByState, data.frame(date = stateData$date, state = stateData$state, newDeaths = c(0, diff(stateData$deaths))))
@@ -43,7 +43,7 @@
       deathsNewByCounty <- NULL
       caseDoubleByCounty <- NULL
       for ( i in unique(usCounties$countyState))  {
-        print(i)
+        # print(i)
         countyData <- usCounties[usCounties$countyState %in% i, ]
         casesNewByCounty <- rbind(casesNewByCounty, data.frame(date = countyData$date, state = countyData$state, newCases = c(0, diff(countyData$cases))))
         deathsNewByCounty <- rbind(deathsNewByCounty, data.frame(date = countyData$date, state = countyData$state, newDeaths = c(0, diff(countyData$deaths))))
