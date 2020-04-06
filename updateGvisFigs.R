@@ -45,14 +45,14 @@
       for ( i in unique(usCounties$countyState))  {
         # print(i)
         countyData <- usCounties[usCounties$countyState %in% i, ]
-        casesNewByCounty <- rbind(casesNewByCounty, data.frame(date = countyData$date, state = countyData$state, newCases = c(0, diff(countyData$cases))))
-        deathsNewByCounty <- rbind(deathsNewByCounty, data.frame(date = countyData$date, state = countyData$state, newDeaths = c(0, diff(countyData$deaths))))
-        caseDoubleByCounty <- rbind(caseDoubleByCounty, data.frame(date = countyData$date, state = countyData$state, casesCntyDoublingRate = c(0, 1/diff(log(countyData$cases, 2)))))
+        casesNewByCounty <- rbind(casesNewByCounty, data.frame(date = countyData$date, countyState = countyData$countyState, newCases = c(0, diff(countyData$cases))))
+        deathsNewByCounty <- rbind(deathsNewByCounty, data.frame(date = countyData$date, countyState = countyData$countyState, newDeaths = c(0, diff(countyData$deaths))))
+        caseDoubleByCounty <- rbind(caseDoubleByCounty, data.frame(date = countyData$date, countyState = countyData$countyState, casesCntyDoublingRate = c(0, 1/diff(log(countyData$cases, 2)))))
       }
       
-      usCounties <-  match.f(usCounties, casesNewByCounty, c('date', 'state'), c('date', 'state'), 'newCases')
-      usCounties <-  match.f(usCounties, deathsNewByCounty, c('date', 'state'), c('date', 'state'), 'newDeaths')
-      usCounties <-  match.f(usCounties, caseDoubleByCounty, c('date', 'state'), c('date', 'state'), 'casesCntyDoublingRate')
+      usCounties <-  match.f(usCounties, casesNewByCounty, c('date', 'countyState'), c('date', 'countyState'), 'newCases')
+      usCounties <-  match.f(usCounties, deathsNewByCounty, c('date', 'countyState'), c('date', 'countyState'), 'newDeaths')
+      usCounties <-  match.f(usCounties, caseDoubleByCounty, c('date', 'countyState'), c('date', 'countyState'), 'casesCntyDoublingRate')
       usCounties$casesCntyDoublingRate[!is.finite(usCounties$casesCntyDoublingRate) | usCounties$casesCntyDoublingRate > 40] <- NA # Extreme cases removed
      
  
