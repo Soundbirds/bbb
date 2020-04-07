@@ -1,5 +1,8 @@
       library(googleVis)
       library(RCurl)
+      library(housingData)
+      
+      # gvisMotionChart on State data
 
       # usStates <- JRWToolBox::gitAFile("nytimes/covid-19-data/master/us-states.csv", 'csv', verbose = TRUE) # Code below from my JRWToolBox::gitAFile() function
       # Note the need to use 'https://raw.githubusercontent.com' without 'blob', but with 'master' in the URL. This has to be correct, otherwise the reuslt is html code or something broken.
@@ -34,6 +37,8 @@
       googleVis:::print.gvis(Ms, file = 'COVID_states.htm')
 
 
+      # gvisMotionChart on County data
+
       usCounties <- read.csv(textConnection(getURL("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv")))
       usCounties$date <- as.Date(usCounties$date)
       usCounties$cases[usCounties$deaths > usCounties$cases] <- (usCounties$cases + usCounties$deaths)[usCounties$deaths > usCounties$cases] 
@@ -67,4 +72,24 @@
       Mc <- googleVis::gvisMotionChart(usCounties[usCounties$state %in% States & usCounties$date > "2020-02-24", ], idvar = 'countyState', timevar = 'date', 
            xvar = 'deaths',  yvar = 'cases', sizevar = 'newCases', colorvar = 'newDeaths', options=list(width = 1365, height = 768))
       # googleVis:::plot.gvis(Mc)      
-      googleVis:::print.gvis(Mc, file = 'COVID_counties.htm')      
+      googleVis:::print.gvis(Mc, file = 'COVID_counties.htm')    
+
+
+      # gvisGeoChart on latest County (fips) data (NY Times data is cummulative so just need that latest date)
+      
+      usCountiesLast <- usCounties[usCounties$date %in% max(usCounties$date), ]
+      usCountiesLast <- match.f(usCountiesLast, housingData::geoCounty, 'fips', 'fips', c('lon', 'lat')) # lat/lon centroid of the counties from housingData
+      usCountiesLast <- renum(na.omit(usCountiesLast))
+      
+      usCountiesLast$LatLong <- paste0(usCountiesLast$lat,":", usCountiesLast$lon) 
+      
+      maxD <- max(usCountiesLast$deaths)
+      cMax <- gvisGeoChart(usCountiesLast, "LatLong", sizevar = 'cases', colorvar = 'deaths', 
+                options=list(region='US', width = 1365, height = 768, 
+                                         displayMode='markers',
+      				   colorAxis=paste0("{values:[1, ", 0.25*maxD, ", ", 0.50*maxD, ", ", 0.75*maxD, ", ", maxD, "], ",
+                                         "colors:['#FFFF00', '#EEEE00', '#EE2C2C', '#CD2626', '#8B1A1A']}")))
+      # googleVis:::plot.gvis(cMax)
+      googleVis:::print.gvis(cMax, file = 'index.htm')  # Put this Geo Chart on the main index.htm
+  
+  
