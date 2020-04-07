@@ -53,8 +53,8 @@ Counties within a state:
       plot(gvisMotionChart(usCounties[usCounties$state %in% State & usCounties$date > "2020-02-24", ], idvar = 'county', timevar = 'date', 
                  xvar = 'deaths',  yvar = 'cases', sizevar = 'newCases', colorvar = 'newDeaths', options=list(width = 1024, height = 768)))
        
-      # Counties inside 3 states 
-      States <- c('Washington', 'New York', 'California')  # Switch states as desired - too many states is slow
+      # Counties inside 4 states 
+      States <- c('Washington', 'New York', 'California', 'Louisiana')  # Switch states as desired - too many states is slow
       plot(gvisMotionChart(usCounties[usCounties$state %in% States & usCounties$date > "2020-02-24", ], idvar = 'countyState', timevar = 'date', 
                  xvar = 'deaths',  yvar = 'cases', sizevar = 'newCases', colorvar = 'newDeaths', options=list(width = 1024, height = 768)))
                         
