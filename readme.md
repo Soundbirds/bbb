@@ -58,13 +58,13 @@ Counties within a state:
       plot(gvisMotionChart(usCounties[usCounties$state %in% States & usCounties$date > "2020-02-24", ], idvar = 'countyState', timevar = 'date', 
                  xvar = 'deaths',  yvar = 'cases', sizevar = 'newCases', colorvar = 'newDeaths', options=list(width = 1024, height = 768)))
                         
-The website for all 50 states is published here:
+The website for all 50 states is updated daily here:
     https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/COVID_states.htm
   
-The website for counties within 4 states is published here:     
+The website for counties within 4 states is updated daily here:     
      https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/COVID_counties.htm
-     
- The website for a Geo Chart with totals within counties is here:
+      
+The website for a Geo Chart with totals within counties is updated daily here:
       https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io
       
  Within Geo Chart, hovering with the mouse pointer over overlapping points will give a magnification of the area.       
