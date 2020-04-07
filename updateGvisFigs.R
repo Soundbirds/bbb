@@ -74,22 +74,23 @@
       # googleVis:::plot.gvis(Mc)      
       googleVis:::print.gvis(Mc, file = 'COVID_counties.htm')    
 
-
-      # gvisGeoChart on latest County (fips) data (NY Times data is cummulative so just need that latest date)
+     
+      # Some of the NY Times data like New York city don't have a fips, and some important fips are missing from housingData::geoCounty - so can't do this correctly!!!!!!!
+      # # gvisGeoChart on latest County (fips) data (NY Times data is cummulative so just need that latest date)
       
-      usCountiesLast <- usCounties[usCounties$date %in% max(usCounties$date), ]
-      usCountiesLast <- match.f(usCountiesLast, housingData::geoCounty, 'fips', 'fips', c('lon', 'lat')) # lat/lon centroid of the counties from housingData
-      usCountiesLast <- renum(na.omit(usCountiesLast))
-      
-      usCountiesLast$LatLong <- paste0(usCountiesLast$lat,":", usCountiesLast$lon) 
-      
-      maxD <- max(usCountiesLast$deaths)
-      cMax <- gvisGeoChart(usCountiesLast, "LatLong", sizevar = 'cases', colorvar = 'deaths', 
-                options=list(region='US', width = 1365, height = 768, 
-                                         displayMode='markers',
-      				   colorAxis=paste0("{values:[1, ", 0.25*maxD, ", ", 0.50*maxD, ", ", 0.75*maxD, ", ", maxD, "], ",
-                                         "colors:['#FFFF00', '#EEEE00', '#EE2C2C', '#CD2626', '#8B1A1A']}")))
-      # googleVis:::plot.gvis(cMax)
-      googleVis:::print.gvis(cMax, file = 'index.htm')  # Put this Geo Chart on the main index.htm
-  
+      #  usCountiesLast <- usCounties[usCounties$date %in% max(usCounties$date), ]
+      #  usCountiesLast <- match.f(usCountiesLast, housingData::geoCounty, 'fips', 'fips', c('lon', 'lat')) # lat/lon centroid of the counties from housingData
+      #  usCountiesLast <- renum(na.omit(usCountiesLast))
+      #  
+      #  usCountiesLast$LatLong <- paste0(usCountiesLast$lat,":", usCountiesLast$lon) 
+      #  
+      #  maxD <- max(usCountiesLast$deaths)
+      #  cMax <- gvisGeoChart(usCountiesLast, "LatLong", sizevar = 'cases', colorvar = 'deaths', 
+      #            options=list(region='US', width = 1365, height = 768, 
+      #                                     displayMode='markers',
+      #  				   colorAxis=paste0("{values:[1, ", 0.25*maxD, ", ", 0.50*maxD, ", ", 0.75*maxD, ", ", maxD, "], ",
+      #                                     "colors:['#FFFF00', '#EEEE00', '#EE2C2C', '#CD2626', '#8B1A1A']}")))
+      #  # googleVis:::plot.gvis(cMax)
+      #  googleVis:::print.gvis(cMax, file = 'index.htm')  # Put this Geo Chart on the main index.htm
+      #  
   
