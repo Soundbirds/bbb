@@ -67,7 +67,7 @@ The website for counties within 4 states is published here:
  The website for a Geo Chart with totals within counties is here:
       https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io
       
- Hovering with the mouse pointer over overlapping points will give a magnification of the area.       
+ Within Geo Chart, hovering with the mouse pointer over overlapping points will give a magnification of the area.       
     
 P.S. Hans Rosling used the precursor of googleVis in an amazing Ted talk from 2006:
     https://www.youtube.com/watch?v=RUwS1uAdUcI
