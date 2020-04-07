@@ -64,11 +64,6 @@ The website for all 50 states is updated daily here:
 The website for counties within 4 states is updated daily here:     
      https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/COVID_counties.htm
       
-The website for a Geo Chart with totals within counties is updated daily here:
-      https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io
-      
- Within Geo Chart, hovering with the mouse pointer over overlapping points will give a magnification of the area.       
-    
 P.S. Hans Rosling used the precursor of googleVis in an amazing Ted talk from 2006:
     https://www.youtube.com/watch?v=RUwS1uAdUcI
     
