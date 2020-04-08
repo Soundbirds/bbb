@@ -9,7 +9,7 @@ For Chrome see:
       https://support.google.com/chrome/answer/6258784?co=GENIE.Platform%3DDesktop&hl=en
     
    
-The website for all 50 states is updated daily here: https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/COVID_states.htm
+The website for all 50 states is updated daily here (17" or larger screen recomended): https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/COVID_states.htm
  
 - Make an initial run without selecting any states.
 - Single left mouse click on a circle to select (or unselect) a state, or select the states manually from the list. 
