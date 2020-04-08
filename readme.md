@@ -9,12 +9,17 @@ For Chrome see:
       https://support.google.com/chrome/answer/6258784?co=GENIE.Platform%3DDesktop&hl=en
     
    
-By state:
-    
-- Switch the x-variable to 'Time' after loading into the web browser is completed (googleVis hangs if xvar starts with the timevar).
+The website for all 50 states is updated daily here: https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/COVID_states.htm
+ 
 - Make an initial run without selecting any states.
-- Single left mouse click on a circle to select (or unselect) a state, or select the states manually from the list.
+- Single left mouse click on a circle to select (or unselect) a state, or select the states manually from the list. 
 - After selection is complete, rerun.  The playback speed can be adjusted using the dial immediately to the right of the play button. 
+- Hovering the mouse curser over any point will show all the data for that point.
+- Hovering the mouse curser over the name of selected state hightlights the last point in that time series.
+- Try changing both the x and y axis to log scale.
+- Note that the x-variable can be switched to 'Time' after loading into the web browser is completed (googleVis hangs if xvar starts with the timevar).
+
+The state data R code is:
 
 
       library(googleVis)
@@ -32,14 +37,12 @@ By state:
            xvar = 'deaths',  yvar = 'cases', sizevar = 'newCases', colorvar = 'newDeaths', options=list(width = 1024, height = 768)))
 
 
+The website for the county data is updated daily here: https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/COVID_counties.htm
 
-Counties within a state:
+For the county (and a few cities) data, selecting too many states whose counties are displayed (last plot example) may be slow.
+(Note that there is no fips (Federal Information Processing Standards) code for the cities (e.g. New York) nor the unknown county within a state data.)
 
- - Switch the x-variable to 'Time' after loading into the web browser is completed (googleVis hangs if xvar starts with the timevar).
-- Make an initial run without selecting any counties.
-- Single left mouse click on a circle to select (or unselect) a county, or select the counties manually from the list.
-- After selection is complete, rerun. The playback speed can be adjusted using the dial immediately to the right of the play button.
-    
+
       library(googleVis)
       library(RCurl)
       
@@ -58,12 +61,7 @@ Counties within a state:
       plot(gvisMotionChart(usCounties[usCounties$state %in% States & usCounties$date > "2020-02-24", ], idvar = 'countyState', timevar = 'date', 
                  xvar = 'deaths',  yvar = 'cases', sizevar = 'newCases', colorvar = 'newDeaths', options=list(width = 1024, height = 768)))
                         
-The website for all 50 states is updated daily here:
-    https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/COVID_states.htm
-  
-The website for counties within 4 states is updated daily here:     
-     https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/COVID_counties.htm
-      
+    
 P.S. Hans Rosling used the precursor of googleVis in an amazing Ted talk from 2006:
     https://www.youtube.com/watch?v=RUwS1uAdUcI
     
