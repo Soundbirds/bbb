@@ -19,7 +19,7 @@ The website for all 50 states is updated daily here: https://soundbirds.github.i
 - Try changing both the x and y axis to log scale.
 - Note that the x-variable can be switched to 'Time' after loading into the web browser is completed (googleVis hangs if xvar starts with the timevar).
 
-The state data R code is:
+The state data R code is below, adjust the width and height to your screen:
 
 
       library(googleVis)
@@ -39,8 +39,8 @@ The state data R code is:
 
 The website for the county data is updated daily here: https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/COVID_counties.htm
 
-For the county (and a few cities) data, selecting too many states whose counties are displayed (last plot example) may be slow.
-(Note that there is no fips (Federal Information Processing Standards) code for the cities (e.g. New York) nor the unknown county within a state data.)
+For the county data, selecting too many states whose counties are displayed (last plot example) may be slow.
+(Note that there is no fips (Federal Information Processing Standards) code for the added cities (e.g. New York) nor the unknown county within a state data.)
 
 
       library(googleVis)
