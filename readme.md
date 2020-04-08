@@ -26,7 +26,6 @@ The state data R code is below, adjust the width and height to your screen:
       library(RCurl)
 
       # Note the need to use 'https://raw.githubusercontent.com' without 'blob', but with 'master' in the URL. This has to be correct, otherwise the result is html code or something broken.
-      
       usStates <- read.csv(textConnection(getURL("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv")))
       usStates$date <- as.Date(usStates$date)
       usStates$newCases <- c(0, diff(usStates$cases))
