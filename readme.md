@@ -38,7 +38,7 @@ The state data R code is below, adjust the width and height to your screen:
 The website for the county data is updated daily here: https://soundbirds.github.io/NY.Times.COVID19.googleVis.github.io/COVID_counties.htm
 
 For the county data, selecting too many states whose counties are displayed (last plot example) may be slow.
-(Note, I do not use the fips (Federal Information Processing Standards) codes since they are missing for the added cities (e.g. New York) and unknown county within a state data.)
+(Note, I do not use the fips (Federal Information Processing Standards) unique county codes since they are missing for the added cities (e.g. New York) and unknown county within a state data.)
 
 
       library(googleVis)
