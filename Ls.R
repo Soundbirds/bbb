@@ -1,51 +1,33 @@
-function (pattern = "[!.]*", pos = 1, all = FALSE, long = FALSE, 
-    open = FALSE, fix = FALSE, ...) 
+function (name, pos = -1L, envir = as.environment(pos), all.names = FALSE, 
+    pattern, sorted = TRUE) 
 {
-    if (all) 
-        pos <- 1:length(search())
-    if (!(is.character(substitute(pattern)))) {
-        pattern <- deparse(substitute(pattern))
-    }
-    if (long) {
-        for (i in pos) {
-            cat("\n")
-            print(ll(pos = i, pattern = pattern))
-            cat("\n")
+    if (!missing(name)) {
+        pos <- tryCatch(name, error = function(e) e)
+        if (inherits(pos, "error")) {
+            name <- substitute(name)
+            if (!is.character(name)) 
+                name <- deparse(name)
+            warning(gettextf("%s converted to character string", 
+                sQuote(name)), domain = NA)
+            pos <- name
         }
-        return(invisible())
     }
-    else {
-        out <- lapply(as.list(pos), objects, pat = pattern, ...)
-        names(out) <- search()[pos]
-    }
-    xlen <- length(out)
-    this <- paste("[[", names(out), "]]", sep = "")
-    for (i in 1:xlen) {
-        if (length(out[[i]]) > 0) {
-            if (is.data.frame(out[[i]]) == TRUE) {
-                if (dim(out[[i]])[1] > 0) {
-                  cat(this[i], ":\n", sep = "")
-                  print(out[[i]], prefix = this[i], q = FALSE)
-                  cat("\n")
-                }
+    all.names <- .Internal(ls(envir, all.names, sorted))
+    if (!missing(pattern)) {
+        if ((ll <- length(grep("[", pattern, fixed = TRUE))) && 
+            ll != length(grep("]", pattern, fixed = TRUE))) {
+            if (pattern == "[") {
+                pattern <- "\\["
+                warning("replaced regular expression pattern '[' by  '\\\\['")
             }
-            else {
-                cat(this[i], ":\n", sep = "")
-                print(out[[i]], prefix = this[i], q = FALSE)
-                cat("\n")
+            else if (length(grep("[^\\\\]\\[<-", pattern))) {
+                pattern <- sub("\\[<-", "\\\\\\[<-", pattern)
+                warning("replaced '[<-' by '\\\\[<-' in regular expression pattern")
             }
         }
+        grep(pattern, all.names, value = TRUE)
     }
-    if (open) {
-        for (i in 1:length(out)) {
-            cat("\n\n***", out[i], "***\n")
-            print(eval(parse(text = out[i])))
-        }
-    }
-    if (length(out) == 1 & fix == TRUE) 
-        assign(substitute(out), edit(eval(parse(text = out))), 
-            pos = 1)
-    invisible(out)
+    else all.names
 }
-<bytecode: 0x000000002d57f718>
-<environment: namespace:JRWToolBox>
+<bytecode: 0x0000000015fe79e8>
+<environment: namespace:base>
